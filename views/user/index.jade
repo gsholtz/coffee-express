@@ -4,5 +4,44 @@ block menu
   - active = "users"
 
 block content
-  .hero-unit
-    h1 #{text}
+  h3 Users
+  table.table.table-striped
+    thead
+      tr
+        th #
+        th Name
+        th Email
+        th Date Created
+        th Active
+        th Action
+    tbody
+      tr 
+        td 1
+        td Zoe Durighan
+        td zoe@gmail.com
+        td 12/03/2013
+        td Yes
+        td
+          a.btn.btn-mini.btn-primary Edit
+          a.btn.btn-mini.btn-danger Delete
+      tr 
+        td 2
+        td Michael Keller
+        td m.keller@gmail.com
+        td 18/03/2013
+        td No
+        td
+          a.btn.btn-mini.btn-primary Edit
+          a.btn.btn-mini.btn-danger Delete
+      tr 
+        td 3
+        td Andrew Metzker
+        td andrewmetz@hotmail.com
+        td 19/03/2013
+        td Yes
+        td
+          a.btn.btn-mini.btn-primary Edit
+          a.btn.btn-mini.btn-danger Delete
+
+
+

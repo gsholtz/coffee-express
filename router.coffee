@@ -4,7 +4,7 @@ routes = [
   action: "index"
   url: "/"
 ,
-  controller: "main"
+  controller: "user"
   type: "get"
   action: "index"
   url: "/user"
@@ -15,10 +15,7 @@ router =
     routes.forEach (route) ->
       #TODO: Validar rota
       app[route.type] route.url, (req,res) ->
-        useController(route.controller)[route.action][route.type](req, res) 
-
-    #app.get "/", (req,res) ->
-    #  useController("main").index(req, res)
+        useController(route.controller)[route.action][route.type](req, res)
 
 useController = (controller) ->
   require("./controllers/#{controller}Controller")   

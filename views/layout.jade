@@ -1,0 +1,27 @@
+doctype 5
+html
+  head
+    title Coffee Express
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/style.css")
+    block head
+  body
+    .container
+      .navbar.navbar-inverse
+        .navbar-inner
+          a.brand(href="/") Basic Application
+          ul.nav
+            - var active = ""
+            block menu
+            li(class="#{active == 'home' ? 'active' : ''}")
+              a(href="/") Home
+            li(class="#{active == 'users' ? 'active' : ''}")
+              a(href="/user") Users
+      .row
+        .span12
+          block content
+
+    script(type="text/javascript", src="http://code.jquery.com/jquery-1.9.1.min.js")
+    script(type="text/javascript", src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js")
+    block javascript

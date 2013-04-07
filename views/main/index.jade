@@ -1,26 +1,11 @@
-!!!5
-html
-  head
-    title #{title}
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="/css/bootstrap.min.css")
-    link(rel="stylesheet", href="/css/style.css")
-  body
-    .container
-      .navbar.navbar-inverse
-        .navbar-inner
-          a.brand(href="/") Basic Application
-          ul.nav
-            li.active
-              a(href="/") Home
-            li
-              a(href="/user") Users
-      .row
-        .span12
-          .hero-unit
-            h1 Administration Control
-            p This is the basic application administration control, where you can define the basic configurations of the application.
-            p
-              a.btn.btn-primary.btn-large(href="/user") Users
-    script(type="text/javascript", src="http://code.jquery.com/jquery-1.9.1.min.js")
-    script(type="text/javascript", src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js")
+extends ../layout
+
+block menu
+  - active = "home"
+
+block content
+  .hero-unit
+    h1 Administration Control
+    p This is the basic application administration control, where you can define the basic configurations of the application.
+    p
+      a.btn.btn-primary.btn-large(href="/user") Users

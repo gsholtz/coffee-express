@@ -8,6 +8,16 @@ routes = [
   type: "get"
   action: "index"
   url: "/user"
+,
+  controller: "user"
+  type: "get"
+  action: "edit"
+  url: "/user/edit/:id"
+,
+  controller: "user"
+  type: "post"
+  action: "edit"
+  url: "/user/edit"
 ]
 
 router = 

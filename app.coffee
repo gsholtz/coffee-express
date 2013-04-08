@@ -27,5 +27,9 @@ else
 #Server
 router.defineRoutes(app)
 
+#Helpers
+app.locals
+  dateFormat: require "dateformat"
+
 console.log "Server running"
  

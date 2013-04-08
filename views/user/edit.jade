@@ -1,0 +1,33 @@
+extends ../layout
+
+block menu
+  active = "users"
+
+block content
+  form.form-horizontal(action="/user/edit", method="post")
+    .control-group
+      label.control-label(for="inputName") Name
+      .controls
+        input#hiddenId(type="hidden", name="id", value=(user._id))
+        input#inputName(type="text", name="name", value=(user.name)) 
+
+    .control-group
+      label.control-label(for="inputEmail") Email
+      .controls
+        input#inputEmail(type="text", name="email", value=(user.email))
+
+    .control-group
+      label.control-label(for="inputEmail") Password
+      .controls
+        input#inputPassword(type="password", name="password", value=(user.password))
+
+    .control-group
+      label.control-label(for="inputActive") Active
+      .controls
+        input#inputActive(type="checkbox", name="active", checked=(user.active ? "checked" : undefined))
+
+    .control-group
+      .controls
+        button.btn.btn-primary(type="submit") Save 
+        button.btn(type="button") Cancel
+

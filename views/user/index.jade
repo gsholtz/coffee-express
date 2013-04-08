@@ -1,47 +1,27 @@
 extends ../layout
 
 block menu
-  - active = "users"
+  active = "users"
 
 block content
   h3 Users
   table.table.table-striped
     thead
       tr
-        th #
         th Name
         th Email
         th Date Created
         th Active
         th Action
     tbody
-      tr 
-        td 1
-        td Zoe Durighan
-        td zoe@gmail.com
-        td 12/03/2013
-        td Yes
-        td
-          a.btn.btn-mini.btn-primary Edit
-          a.btn.btn-mini.btn-danger Delete
-      tr 
-        td 2
-        td Michael Keller
-        td m.keller@gmail.com
-        td 18/03/2013
-        td No
-        td
-          a.btn.btn-mini.btn-primary Edit
-          a.btn.btn-mini.btn-danger Delete
-      tr 
-        td 3
-        td Andrew Metzker
-        td andrewmetz@hotmail.com
-        td 19/03/2013
-        td Yes
-        td
-          a.btn.btn-mini.btn-primary Edit
-          a.btn.btn-mini.btn-danger Delete
-
-
+      each user in users
+        tr
+          td= user.name
+          td= user.email
+          td= dateFormat(user.creationDate, "dd/mm/yyyy")
+          td= user.active ? "Yes" : "No"
+          td
+            a.btn.btn-mini.btn-primary(href="/user/edit/#{user._id}") Edit
+            a.btn.btn-mini.btn-danger(href="/user/delete/#{user._id}") Delete
+      
 

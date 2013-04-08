@@ -11,6 +11,11 @@ routes = [
 ,
   controller: "user"
   type: "get"
+  action: "create"
+  url: "/user/create"
+,
+  controller: "user"
+  type: "get"
   action: "edit"
   url: "/user/edit/:id"
 ,

@@ -10,6 +10,11 @@ userController =
           res.render "user/index",
             users: users
 
+  create:
+    get: (req, res) ->
+      res.render "user/edit",
+        user: new User()
+
   edit:
     get: (req, res) ->
       if req.params.id
@@ -35,5 +40,7 @@ userController =
           active: req.body.active
         .exec()
         res.redirect "user"
+
+
 
 module.exports = userController

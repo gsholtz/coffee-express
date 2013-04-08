@@ -30,5 +30,12 @@ block content
     .control-group
       .controls
         button.btn.btn-primary(type="submit") Save 
-        button.btn(type="button") Cancel
+        button#cancel.btn(type="button") Cancel
 
+block javascript
+  script(type="text/javascript")
+    $(document).ready(function(){
+      $("button#cancel").click(function(e){
+        window.location = "/user";
+      });
+    });

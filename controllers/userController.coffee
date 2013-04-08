@@ -27,13 +27,12 @@ userController =
     post: (req, res) ->
       if req.body.id
         User.update
-          _id: "#{req.body.id}"
+          _id: req.body.id
         ,
-          $set:
-            name: req.body.name
-            email: req.body.email
-            password: req.body.password
-            active: req.body.active
+          name: req.body.name
+          email: req.body.email
+          password: req.body.password
+          active: req.body.active
         .exec()
         res.redirect "user"
 

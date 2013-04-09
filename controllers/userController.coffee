@@ -13,7 +13,8 @@ userController =
   create:
     get: (req, res) ->
       res.render "user/edit",
-        user: new User()
+        user: new User
+          _id: 0
 
   edit:
     get: (req, res) ->
@@ -30,7 +31,7 @@ userController =
         res.redirect "user"
 
     post: (req, res) ->
-      if req.body.id
+      if req.body.id != ""
         User.update
           _id: req.body.id
         ,
@@ -39,7 +40,23 @@ userController =
           password: req.body.password
           active: req.body.active
         .exec()
-        res.redirect "user"
+      else
+        user = new User(req.body)
+        user.creationDate = new Date()
+        user.save()
+      res.redirect "user"
+
+  delete:
+    post: (req, res) ->
+      if req.body.id
+        User.find
+          _id: req.body.id
+          (err, users) ->
+            if users.length > 0
+              users[0].remove()
+              res.json
+                removed: true,
+                id: req.body.id
 
 
 

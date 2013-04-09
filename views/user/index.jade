@@ -4,7 +4,11 @@ block menu
   active = "users"
 
 block content
-  h3 Users
+  .row
+    .span9
+      h3 Users
+    .span3
+      a.btn.text-center(href="/user/create") Create User
   table.table.table-striped
     thead
       tr
@@ -22,6 +26,8 @@ block content
           td= user.active ? "Yes" : "No"
           td
             a.btn.btn-mini.btn-primary(href="/user/edit/#{user._id}") Edit
-            a.btn.btn-mini.btn-danger(href="/user/delete/#{user._id}") Delete
-      
+            a.btn.btn-mini.btn-danger.delete(id=(user._id)) Delete
+
+block javascript
+  script(type="text/javascript", src="/js/user/index.js")
 

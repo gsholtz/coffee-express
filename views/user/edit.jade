@@ -33,9 +33,4 @@ block content
         button#cancel.btn(type="button") Cancel
 
 block javascript
-  script(type="text/javascript")
-    $(document).ready(function(){
-      $("button#cancel").click(function(e){
-        window.location = "/user";
-      });
-    });
+  script(type="text/javascript", src="/js/user/edit.js")

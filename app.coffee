@@ -1,4 +1,5 @@
 #Libs
+coffee = require "coffee-script"
 express = require "express"
 app = module.exports = express()
 mongoose = require "mongoose"
@@ -15,6 +16,7 @@ app.use express.static(__dirname + "/assets")
 app.use app.router
 
 app.listen process.env.PORT or process.env.VMC_APP_PORT or 3000
+
 
 if process.env.ENVIRONMENT == "production"
   app.settings.env = process.ENVIRONMENT

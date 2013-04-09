@@ -23,6 +23,11 @@ routes = [
   type: "post"
   action: "edit"
   url: "/user/edit"
+,
+  controller: "user"
+  type: "post"
+  action: "delete"
+  url: "/user/delete"
 ]
 
 router = 

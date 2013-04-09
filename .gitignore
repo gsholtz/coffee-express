@@ -9,6 +9,7 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.yml
 
 pids
 logs
@@ -17,3 +18,5 @@ results
 npm-debug.log
 node_modules
 .dump.coffee
+
+assets/js/

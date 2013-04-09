@@ -26,6 +26,13 @@ if app.settings.env == "development"
 else
   console.log "You didn't set a db connection for production"
 
+#Build Commands
+if app.settings.env == "development" 
+  exec = require("child_process").exec
+  exec "coffee -c -o assets/js/ assets/coffee/", (err, stdout, stderr) ->
+    if err is not null
+      console.log err
+
 #Server
 router.defineRoutes(app)
 

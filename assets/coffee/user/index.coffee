@@ -8,5 +8,16 @@ $(document).ready ->
     ,
       (data) ->
         if data.removed
-          $(e.currentTarget).parent().parent().slideUp 600, ->
-            @remove()
+          $(e.currentTarget)
+          .parent().parent()
+          .find("td")
+          .wrapInner("<div style='display: block;' />")
+          .parent()
+          .find("td > div")
+          .slideUp 400, ->
+            $(@).parent().parent().remove()
+
+
+
+
+      

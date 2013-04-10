@@ -1,8 +1,23 @@
 $(document).ready ->
+  $("a.create").click (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    console.log "Create row"
+
+#    $('#my_table > tbody > tr.my_row')
+# .find('td')
+# .wrapInner('<div style="display: none;" />')
+# .parent()
+# .find('td > div')
+# .slideDown(700, function(){
+#  var $set = $(this);
+#  $set.replaceWith($set.contents());
+# });
+
   $("a.delete").click (e) ->
     e.preventDefault()
     e.stopPropagation()
-    $.post "/user/delete"
+    $.post "/group/delete"
     ,
       id: e.currentTarget.id
     ,

@@ -17,6 +17,6 @@ div.container {
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
 
-table a, form button {
+table a, form button, .hero-unit a.btn {
     margin: 2px;
 }

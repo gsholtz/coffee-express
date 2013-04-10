@@ -32,6 +32,9 @@ if app.settings.env == "development"
   exec "coffee -c -o assets/js/ assets/coffee/", (err, stdout, stderr) ->
     if err is not null
       console.log err
+    if stderr
+      console.log stderr
+      console.log "Error on coffee compilation, client-side scripts"
 
 #Server
 router.defineRoutes(app)

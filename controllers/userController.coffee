@@ -58,6 +58,4 @@ userController =
                 removed: true,
                 id: req.body.id
 
-
-
 module.exports = userController

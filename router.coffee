@@ -28,6 +28,11 @@ routes = [
   type: "post"
   action: "delete"
   url: "/user/delete"
+,
+  controller: "group"
+  type: "get"
+  action: "index"
+  url: "/group"
 ]
 
 router = 

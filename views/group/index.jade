@@ -1,0 +1,32 @@
+extends ../layout
+
+block menu
+  active = "groups"
+
+block content
+  .row
+    .span9
+      h2 Groups
+    .span3
+      a.btn.btn-success.create(href="#") Create Group
+  table.table.table-striped
+    thead
+      tr
+        th Name
+        th Date Created
+        th Active
+        th Action
+    tbody
+      each group in groups
+        tr
+          td= group.name
+          td= dateFormat(group.creationDate, "dd/mm/yyyy")
+          td= group.active ? "Yes" : "No"
+          td
+            input(type="hidden", value=(group._id))
+            a.btn.btn-mini.btn-primary(href="#") Edit
+            a.btn.btn-mini.btn-danger.delete(id=(group._id)) Delete
+
+block javascript
+  script(type="text/javascript", src="/js/group/index.js")
+
